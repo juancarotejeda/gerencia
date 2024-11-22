@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Direccion tecnica</title> 
+<link rel="webside icon" type="png" href="/static/favicon/favicon-32x32.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+
+ <link rel="stylesheet" href='/static/css/navbar-fixed.css'>
+</head>  
+<body>
+  <fieldset class="login-entrada">
+  <form  action="/verificacion" method='POST'>    
+  <h1>GRUPO ACTEC MOTOBEN</h1>
+  <ol>
+  <li>  
+  {% with messages = get_flashed_messages()%}
+  {% if messages%}
+  {% for message in messages%}
+     <div class="msg">{{message}}</div>
+  {%endfor%}
+  {%endif%}
+  {%endwith%} 
+  </li>
+  <li> 
+  <label for="funcion">Funcion</label>          
+  <select name="funcion" id="funcion">
+        <optgroup label="funcion"> 
+        <option selected ></option>   
+        {%for miembros in funcion%}
+        <option >{{miembros}}</option>
+        {%endfor%}
+        </optgroup>
+  </select>      
+  </li> 
+  <li>     
+    <label for="codigo">Codigo personal</label>
+    <input type="text" name="codigo_personal" id="codigo" placeholder="Codigo personal" required>       
+  </li>
+  <li> 
+    <label for="clave">Contraseña</label>
+    <input type="password" id="clave" name="clave" placeholder="Contraseña" required>    
+  </li>
+  <li>
+  <button type="submit"  class="button">ENTRAR</button>
+  </li>
+  </ol>
+  </form>
+  </fieldset> 
+</body>
+</html>
