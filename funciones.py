@@ -8,14 +8,16 @@ def check_parada(cur,parada):
             return False
         
 def check_funcion(cur,funcion):
-    cur.execute(f"SELECT codigo,password,funcion FROM administracion WHERE funcion = '{funcion}' ")
+    codg=[]
+    func=[]
+    cur.execute(f"SELECT codigo,funcion FROM administracion WHERE funcion = '{funcion}' ")
     check=cur.fetchall()
     if check !=[]:
       for valor in check:
         codg=valor[0]
-        pasw=valor[1]
-        func=valor[2]
-      return codg,pasw,func
+        func=valor[1]
+      return codg,func
+    
     else: 
         return False        
         
@@ -90,8 +92,8 @@ def listado_paradas_sdo(cur):
 
 
 
-def listado_administrativo(cur,adm):
-    cur.execute(f"SELECT funcion FROM {adm}")  
+def listado_administrativo(cur):
+    cur.execute("SELECT funcion FROM administracion")  
     db_paradas=cur.fetchall()     
     return db_paradas
 

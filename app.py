@@ -24,7 +24,7 @@ connection =mysql.connector.connect(
 @app.route("/")
 def login():   
     cur = connection.cursor() 
-    resultado=funciones.listado_administrativo(cur,"administracion")
+    resultado=funciones.listado_administrativo(cur)
     funcion=[]
     for funcionarios in resultado:
        funcion += funcionarios  
@@ -36,12 +36,11 @@ def verificacion():
    msg = ''
    if request.method == 'POST':        
     funcion = request.form['funcion']
-    codigo_personal = request.form['codigo_personal']
-    password = request.form['clave']   
+    codigo_personal = request.form['codigo_personal'] 
     cur = connection.cursor()   
     estacion=funciones.check_funcion(cur,funcion)
    if estacion != False:           
-    if codigo_personal == estacion[0] and password == estacion[1] : 
+    if codigo_personal == estacion[0] and funcion == estacion[1] : 
       if codigo_personal == 'GE-01': 
             paradas=funciones.listado_paradas(cur)
             parada=[]       
@@ -165,8 +164,8 @@ def indice():
         cur.close()
         return render_template('index.html',paradas=paradas,informacion=informacion,cabecera=cabecera,fecha=fecha,miembros=miembros,diario=diario,cuotas_hist=cuotas_hist)     
 
-@app.route("/indice_note", methods=["GUET","POST"])
-def indice_note():
+@app.route("/indice_norte", methods=["GUET","POST"])
+def indice_norte():
     if request.method == 'POST':        
         parada = request.form['parada'] 
         cur = connection.cursor()          
