@@ -2,8 +2,6 @@
 body {
   min-height: 75rem;
   padding-top: 4.5rem;
-  padding-left: 4.5rem;
-  padding-right: 4.5rem;
   background: #ceecee;
   
 }
@@ -153,9 +151,20 @@ body {
 }
 
 @media (max-width: 768px) {
-  .container {
-    margin-left: 5px;
+  .login-entrada {
+    min-width: 350px;
   }
+
+.encabezado{
+  min-width: 390px;
+}
+
+.tables{
+  min-width: 390px; 
+}
+
+
+
 
 }
 
