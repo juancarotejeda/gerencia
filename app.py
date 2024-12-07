@@ -131,6 +131,9 @@ def verificacion():
             cur.close()
             return render_template('index_sde.html',paradas=paradas,informacion=informacion,cabecera=cabecera,fecha=fecha,miembros=miembros,diario=diario,cuotas_hist=cuotas_hist)      
     
+      elif codigo_personal == '00':
+            return render_template('canal_motoben.html')      
+
       elif codigo_personal == 'GSO-00':
             cur = connection.cursor() 
             paradas=funciones.listado_paradas_sdo(cur)
@@ -142,7 +145,7 @@ def verificacion():
             diario=funciones.diario_general(cur,parada) 
             cuotas_hist=funciones.prestamo_aport(cur,parada)
             cur.close()
-            return render_template('index_sdo.html',paradas=paradas,informacion=informacion,cabecera=cabecera,fecha=fecha,miembros=miembros,diario=diario,cuotas_hist=cuotas_hist)      
+            return render_template('index_sdo.html',paradas=paradas,informacion=informacion,cabecera=cabecera,fecha=fecha,miembros=miembros,diario=diario,cuotas_hist=cuotas_hist)  
      
     else:
         msg = 'Sin acceso a estas paginas!'          

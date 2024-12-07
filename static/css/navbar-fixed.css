@@ -2,7 +2,6 @@
 body {
   min-height: 75rem;
   padding-top: 4.5rem;
-  background: #ceecee;
   
 }
 
@@ -13,11 +12,7 @@ body {
   -moz-user-select: none;
   user-select: none;
 }
-.container{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
+
 
 
 
@@ -151,20 +146,10 @@ body {
 }
 
 @media (max-width: 768px) {
-  .login-entrada {
-    min-width: 350px;
-  }
-
-.encabezado{
-  min-width: 390px;
+.container{
+  width: 400px;
 }
-
-.tables{
-  min-width: 390px; 
-}
-
-
-
+ 
 
 }
 
@@ -233,22 +218,20 @@ body {
 }
 
 .encabezado{
-  margin:auto; 
   background: rgba(207, 250, 249, 0.958);
-
   color:#000000;
   font-size: 14px;
-  padding: 30px;
-  width: auto;
+ margin: 0px auto;
+ width: 100%;
   border:solid 5px  LightSteelBlue;
-  overflow: hidden;
-}        
+}  
+
 .encabezado input{
   font-size:14px;
   color:#000000;
   width:200px;
   background: rgba(207, 250, 249, 0.958);
-  border: none;
+ border: none;
   margin-left: 100px;
   }
   
@@ -349,13 +332,13 @@ body {
       background-color: #ceecee;
       color: #000000;
       font-size: 12px;
-      padding: 30px;
+      padding: 5px;
       width: max-content;
       height: 350px;
       border:solid 10px LightSteelBlue;
       border-radius: 10px;
       margin: 0px auto;
-      
+      overflow: hidden;
       }
           
       .login-entrada fieldset{
@@ -364,13 +347,14 @@ body {
           
       .login-entrada h1{
           text-align: center;
-          margin-bottom: 10px; 
+          margin-bottom: 5px; 
           color: blue;           
           }        
   
       .login-entrada h2{
             text-align: center;  
-            color: crimson;          
+            color: crimson;
+            margin-bottom: 5px;          
             }           
 
       .login-entrada label{
@@ -380,15 +364,17 @@ body {
           }             
 
       .login-entrada  ol li{
-          line-height: 25px;
-          list-style: none;
-          list-style-type: none;
-        padding-top: 20px;
+          line-height: 30px;
+          list-style: none;          
+        margin-top: 5px;
+        margin-bottom: 5px;
           }
           
       
       .login-entrada select{
               font-size:12px;
+              font-weight: 700;
+              color: #000000;
               background: yellow;
               border-radius: 5px;
               float: right;
@@ -400,8 +386,10 @@ body {
 
       
 .login-entrada input{
-    font-size:12px;
-    background: yellow;
+  font-size:12px;
+  font-weight: 700;
+  color: #000000;
+  background: yellow;
     border-radius: 5px;
     float: right;
     margin-right: 20px;  
@@ -415,10 +403,12 @@ body {
     background: rgb(89, 255, 0);
     border-radius: 5px;
     float: right;
+    margin-top: 15px;
     margin-right: 20px; 
-    margin-bottom: 10px; 
     height: 32px; 
-    width: 253px;  
+    width: 250px;
+    color: #000000; 
+    font-weight: 700; 
   }        
 
   .buscar select{
