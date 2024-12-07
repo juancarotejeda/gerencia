@@ -272,10 +272,6 @@ def indice_distrito():
         cur.close()
         return render_template('index_distrito.html',paradas=paradas,informacion=informacion,cabecera=cabecera,fecha=fecha,miembros=miembros,diario=diario,cuotas_hist=cuotas_hist)     
 
-@app.route("/canal")
-def canal():
-    return render_template('canal_motoben.html')
-
 
 
 if __name__ == "__main__":

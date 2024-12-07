@@ -1,8 +1,7 @@
 /* Show it is fixed to the top */
 body {
   min-height: 75rem;
-  padding-top: 4.5rem;
-  
+  padding-top: 0.5rem;
 }
 
 .bd-placeholder-img {
@@ -12,8 +11,6 @@ body {
   -moz-user-select: none;
   user-select: none;
 }
-
-
 
 
 .b-example-divider {
@@ -93,6 +90,7 @@ body {
   margin-left: 100px;
   transition: all 300ms ease;
 }
+
 .bt-regresar label:hover{
   background-color: #ff9e03;
 }
@@ -129,9 +127,8 @@ body {
   border:solid 10px LightSteelBlue inset;
   margin-top: 10px;
   margin-bottom: 10px;
-
-
 }
+
 .publicidad-m img{
   width: 100px;
   height: 100px;
@@ -195,7 +192,6 @@ body {
 .btn-bd-primary {
   --bd-violet-bg: #712cf9;
   --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-
   --bs-btn-font-weight: 600;
   --bs-btn-color: var(--bs-white);
   --bs-btn-bg: var(--bd-violet-bg);
@@ -334,11 +330,9 @@ body {
       font-size: 12px;
       padding: 5px;
       width: max-content;
-      height: 350px;
       border:solid 10px LightSteelBlue;
       border-radius: 10px;
       margin: 0px auto;
-      overflow: hidden;
       }
           
       .login-entrada fieldset{
@@ -403,8 +397,9 @@ body {
     background: rgb(89, 255, 0);
     border-radius: 5px;
     float: right;
-    margin-top: 15px;
-    margin-right: 20px; 
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-bottom: 10px; 
     height: 32px; 
     width: 250px;
     color: #000000; 
