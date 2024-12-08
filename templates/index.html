@@ -29,7 +29,17 @@
       <symbol id="sun-fill" viewBox="0 0 16 16">
         <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
       </symbol>
+      <symbol id="home" viewBox="0 0 16 16">
+        <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
+      </symbol>
     </svg> 
+
+    <div class="container"> 
+    <button type="button"  id="returnbtn" class="btn d-flex align-items-center ">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <svg class="bi me-2 opacity-50" width="15px" height="15px"><use href="#home"></use></svg>
+      </a>up
+    </button>
     <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
       <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
                 id="bd-theme"
@@ -83,41 +93,37 @@
         </div>
       </div>
     </div>
-    <div class="navbar navbar-dark bg-dark shadow-sm">
+    </header>
     <div class="container" >
+    <div class="navbar navbar-dark bg-dark shadow-sm">
     <a href="#" class="navbar-brand d-flex align-items-center">
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-    <strong>Album</strong></a>            
-    
-              <form action="/indice"  class="d-flex" role="search" method="POST">   
-              <label for="funcion">Paradas</label>          
-                <select name="parada" id="funcion" >
-                      <optgroup label="funcion"> 
-                      <option selected ></option>   
-                      {%for parada in paradas%}
-                      <option >{{parada}}</option>
-                      {%endfor%}
-                      </optgroup>
-                </select>  
-              <button class="btn btn-outline-success" type="submit">Seleccionar</button>
-              </form>
-            
-    
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"></svg>
+    </a> 
+    <div class="d-flex" role="search">           
+    <form action="/indice"  method="POST">   
+    <label for="funcion">Paradas</label>          
+      <select name="parada" id="funcion" >
+            <optgroup label="funcion"> 
+            <option selected ></option>   
+            {%for parada in paradas%}
+            <option >{{parada}}</option>
+            {%endfor%}
+            </optgroup>
+      </select>  
+    <button class="btn btn-outline-success" type="submit">Seleccionar</button>
+    </form>            
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
     </div>
-  </header>
-
-<div id="regresar"></div>
-
+    </div>
+    </div>
 
 <div class="container">
   <section id="informacion">
     <fieldset class="encabezado">  
       {%for datos in informacion %}   
-      <h1>INFORMACION DE LA PARADA</h1>  
+      <h1>INFORME DE LA PARADA</h1>  
       <ol>    
       <li>
       <label for="parada">_Nombre:</label>
@@ -158,13 +164,6 @@
       </li>
       </ol>
       {%endfor%}
-      <div class="botonera">
-      <div class="bt-regresar">
-        <label for="regresar">
-        <a href="#regresar">Regreso</a> 
-      </label>
-      </div>
-      </div>
       </fieldset>
   </section>
 </div>
@@ -190,81 +189,67 @@
          </tr>
          {%endfor%}
       </table>
-      <div class="botonera">
-      <div class="bt-regresar">
-        <label for="regresar">
-        <a href="#regresar">Regreso</a> 
-      </label>
-      </div> 
-      </div> 
       </fieldset>
   </section>
   </div>
   <div class="container">
   <section id="finanzas">
     <fieldset class="tables">
-      <h1>INFORMACION FINANCIERA</h1>
+      <h1>INFORME FINANCIERO</h1>
       <table>
          <tr>
             <th>Item</th>
-            <th>Informacion financiera</th>
+            <th>Informe</th>
             <th>Total al momento</th>
          </tr>
          <tr>
           <tD>1</tD>
-          <td>Historico de aporta de los asociados :</td>
+          <td>Aporte de los asociados :</td>
           <td>{{diario[2]}}RD$</td>
        </tr>
        <tr>
           <tD>2</tD>
-          <td>Historico de ingresos por otras actividades :</td>
+          <td>Ingresos por otras actividades :</td>
           <td> {{diario[4]}}RD$</td>
        </tr>
        <tr>
           <tD>3</tD>
-          <td> Historico de abonos a prestamos de los asociados:</td>
+          <td>Prestamos de los asociados :</td>
           <td>{{diario[6]}}RD$</td>
        </tr>
          <tr>
           <tD>4</tD>
-          <td>Historico de Prestamos facilitados los asociados :</td>
+          <td>Prestamos a los asociados :</td>
           <td>{{diario[1]}}RD$</td>
        </tr>
        <tr>
           <tD>5</tD>
-          <td>Historial de cuotas no pagadas por los asociados:</td>
+          <td>Cuotas no pagadas :</td>
           <td>{{diario[5]}}RD$</td>
        </tr>
        <tr>
           <tD>6</tD>
-          <td>Historial de gastos incurridos por la parada :</td>
+          <td>Gastos de la parada :</td>
           <td>{{diario[3]}}RD$</td>
        </tr>
-    
-         <tr>
-            <tD>7</tD>
-            <td>Informacion de balance bancario actualizada:</td>
-            <td>{{diario[7]}}RD$</td>
-         </tr>
-         <tr>
-            <tD>8</tD>
-            <td>Balance segun datos aportas por el presidente:</td>
-            <td>{{diario[0]}}RD$</td>
-         </tr>
-      </table>
-      <div class="botonera">
-      <div class="bt-regresar">
-        <label for="regresar">
-        <a href="#regresar">Regreso</a> 
-      </label>
-      </div>
-    </div>
-    </fieldset>
-  </section>
-  </div>
-  <div class="container">
-    <section id="historia_aportes">
-      <fieldset class="tables">
+       <tr>
+        <tD>7</tD>
+        <td>Balance economico :</td>
+        <td>{{diario[0]}}RD$</td>
+       </tr>    
+       <tr>
+        <tD>8</tD>
+        <td>Balance bancario actualizado:</td>
+        <td>{{diario[7]}}RD$</td>
+       </tr>
+       </table>
+       </fieldset>
+       </section>
+       </div>
+
+       <div class="container">
+       <section id="historia_aportes">
+       <fieldset class="tables">
         <h1>Historial de Aportes y Pendientes</h1>
         <table>
            <tr>
@@ -283,14 +268,7 @@
               <td>{{usuario[4]}}%</td>
            </tr>
            {%endfor%}
-        </table>
-        <div class="botonera">
-        <div class="bt-regresar">
-          <label for="regresar">
-          <a href="#regresar">Regreso</a> 
-        </label>
-        </div>
-      </div>    
+        </table>  
      </fieldset>
     </section> 
   </div>
