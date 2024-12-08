@@ -63,6 +63,7 @@ body {
 .navbar {
   margin-top: 10px;
   margin-bottom: 10px;
+  width: 100%;
 }
 
 .logo{
@@ -143,9 +144,11 @@ body {
 
 @media (max-width: 768px) {
 .container{
-  width: 400px;
+  width: 500px;;
 }
- 
+.navbar{
+  width: 500px;
+} 
 
 }
 
@@ -379,20 +382,22 @@ body {
 
       
 .login-entrada input{
-  font-size:12px;
-  font-weight: 700;
-  color: #000000;
-  background: yellow;
-    border-radius: 5px;
-    float: right;
-    margin-right: 20px;  
-    height: 30px; 
-    width: 250px;
+   font-size:12px;
+   font-weight: 700;
+   color: #000000;
+   background: yellow;
+   border-radius: 5px;
+   float: right;
+   margin-right: 20px;  
+   height: 30px; 
+   width: 250px;
 
   }
       
 .login-entrada button{
-    font-size:12px;
+  font-size:12px;
+  font-weight: 700;
+  color: #000000;
     background: rgb(89, 255, 0);
     border-radius: 5px;
     float: right;
@@ -402,7 +407,6 @@ body {
     height: 32px; 
     width: 250px;
     color: #000000; 
-    font-weight: 700; 
   }        
 
   .buscar select{
