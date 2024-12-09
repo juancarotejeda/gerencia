@@ -152,9 +152,12 @@ body {
 }
 
 @media (max-width: 768px) {
-.container{
-  width: 500px;
+.container-fluid{
+  width: 600px;
+
 }
+
+
 
 
 }

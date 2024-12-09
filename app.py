@@ -41,7 +41,7 @@ def verificacion():
     estacion=funciones.check_funcion(cur,funcion)
    if estacion != False:           
     if codigo_personal == estacion[0] and funcion == estacion[1] : 
-      if codigo_personal == 'GE-01': 
+      if codigo_personal == 'GE00': 
             paradas=funciones.listado_paradas(cur)
             parada=[]       
             fecha = datetime.strftime(datetime.now(),"%Y %m %d - %H")
@@ -53,7 +53,7 @@ def verificacion():
             cur.close()
             return render_template('index.html',paradas=paradas,informacion=informacion,cabecera=cabecera,fecha=fecha,miembros=miembros,diario=diario,cuotas_hist=cuotas_hist)                  
         
-      elif codigo_personal == 'GRN-00':
+      elif codigo_personal == 'GRN00':
             cur = connection.cursor() 
             paradas=funciones.listado_paradas_norte(cur)
             parada=[]  
@@ -66,7 +66,7 @@ def verificacion():
             cur.close()
             return render_template('index_norte.html',paradas=paradas,informacion=informacion,cabecera=cabecera,fecha=fecha,miembros=miembros,diario=diario,cuotas_hist=cuotas_hist)      
 
-      elif codigo_personal == 'GRS-00':
+      elif codigo_personal == 'GRS00':
             cur = connection.cursor() 
             paradas=funciones.listado_paradas_sur(cur)
             parada=[]  
@@ -79,7 +79,7 @@ def verificacion():
             cur.close()
             return render_template('index_sur.html',paradas=paradas,informacion=informacion,cabecera=cabecera,fecha=fecha,miembros=miembros,diario=diario,cuotas_hist=cuotas_hist)      
 
-      elif codigo_personal == 'GRE-00':
+      elif codigo_personal == 'GRE00':
             cur = connection.cursor() 
             paradas=funciones.listado_paradas_este(cur)
             parada=[]  
@@ -92,7 +92,7 @@ def verificacion():
             cur.close()
             return render_template('index_este.html',paradas=paradas,informacion=informacion,cabecera=cabecera,fecha=fecha,miembros=miembros,diario=diario,cuotas_hist=cuotas_hist)      
  
-      elif codigo_personal == 'GDN-00':
+      elif codigo_personal == 'GDN00':
             cur = connection.cursor() 
             paradas=funciones.listado_paradas_distrito(cur)
             parada=[]  
@@ -105,7 +105,7 @@ def verificacion():
             cur.close()
             return render_template('index_distrito.html',paradas=paradas,informacion=informacion,cabecera=cabecera,fecha=fecha,miembros=miembros,diario=diario,cuotas_hist=cuotas_hist)      
   
-      elif codigo_personal == 'GSN-00':
+      elif codigo_personal == 'GSN00':
             cur = connection.cursor() 
             paradas=funciones.listado_paradas_sdn(cur)
             parada=[]  
@@ -118,7 +118,7 @@ def verificacion():
             cur.close()
             return render_template('index_sdn.html',paradas=paradas,informacion=informacion,cabecera=cabecera,fecha=fecha,miembros=miembros,diario=diario,cuotas_hist=cuotas_hist)      
    
-      elif codigo_personal == 'GSE-00':
+      elif codigo_personal == 'GSE00':
             cur = connection.cursor() 
             paradas=funciones.listado_paradas_sde(cur)
             parada=[]  
@@ -134,7 +134,7 @@ def verificacion():
       elif codigo_personal == '00':
             return render_template('canal_motoben.html')      
 
-      elif codigo_personal == 'GSO-00':
+      elif codigo_personal == 'GSO00':
             cur = connection.cursor() 
             paradas=funciones.listado_paradas_sdo(cur)
             parada=[]  
