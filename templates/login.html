@@ -7,9 +7,7 @@
       <title>Gerentes</title>
       <link rel="webside icon" type="png" href="/static/favicon/favicon-32x32.png">
       <link href="/static/css/bootstrap.min.css" rel="stylesheet"> 
-      <link href="/static/css/navbar-fixed.css" rel="stylesheet"> 
-      <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/navbar-static/">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">  
+      <link href="/static/css/navbar-fixed.css" rel="stylesheet">   
       <!-- Custom styles for this template -->  
       <script src="/static/js/bootstrap.bundle.min.js"></script>
       <script src="/static/js/color-modes.js"></script> 
@@ -17,7 +15,6 @@
     </head>
     <body>
     <div class="container-fluid p-5  text-white text-center">
-    <div class="container mt-5">  
       <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
         <symbol id="check2" viewBox="0 0 16 16">
           <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
@@ -36,13 +33,6 @@
           <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
         </symbol>
       </svg>
-      <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-        <button type="button"  id="returnbtn" class="btn d-flex align-items-center ">
-        <a href="#" class="navbar-brand d-flex align-items-center">
-        <svg class="bi me-2 opacity-50" width="15px" height="15px"><use href="#home"></use></svg>
-        </a>up
-        </button>
-        </div>
       <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
         <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
                 id="bd-theme"
@@ -94,17 +84,15 @@
           </div>
         </div>
       </div>
-  </header>
-  <div class="container mt-5">
-  <div class="album py-5 bg-body-tertiary">   
+  </header>   
   <fieldset class="login-entrada">
   <form  action="/verificacion" method='POST'>    
   <h1>GRUPO ACTEC MOTOBEN</h1>
   <h2>Coordinadores</h2>
   <ol>
   <li> 
-  <label for="funcion">Coordinador</label>          
-  <select name="funcion" id="funcion">
+  <label for="mt-funcion">Coordinador</label>          
+  <select name="funcion" id="mt-funcion">
         <optgroup label="funcion"> 
         <option selected ></option>   
         {%for miembros in funcion%}
@@ -114,11 +102,11 @@
   </select>      
   </li> 
   <li>     
-    <label for="codigo">Codigo de Entrada</label>
-    <input type="text" name="codigo_personal" id="codigo" placeholder="Codigo personal" required>       
+    <label for="mt-codigo">Codigo de Entrada</label>
+    <input type="text" name="codigo_personal" id="codigo" placeholder="Codigo" required>       
   </li>
   <li>
-  <button type="submit"  class="button">ENTRAR</button>
+  <button type="submit"  class="mt-button">ENTRAR</button>
   </li>
   <li>  
     {% with messages = get_flashed_messages()%}
@@ -132,18 +120,10 @@
   </ol>
   </form>
   </fieldset> 
-</div>
-</div>
-</div>
-<div class="container mt-5">
 <footer >
-      <p class="float-end mb-1">
-      <a href="#">Back to top</a>
-      </p>
-      <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-      <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a href="../getting-started/introduction/">getting started guide</a>.</p>
+      <p class="mb-1">Grupo Actec &copy;Para todas las paradas de motores del pais</p>
+      <p class="mb-0">Eres Nuevo? <a href="/">Visite el canal de MotoBen</a> O buzque nuestra guia <a href="{{url_for('guia')}}">getting started guide</a>.</p>
 </footer>
-</div>
 </div>
 </body>
 </html>

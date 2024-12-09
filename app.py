@@ -41,7 +41,7 @@ def verificacion():
     estacion=funciones.check_funcion(cur,funcion)
    if estacion != False:           
     if codigo_personal == estacion[0] and funcion == estacion[1] : 
-      if codigo_personal == 'GE00': 
+      if codigo_personal == 'ge00': 
             paradas=funciones.listado_paradas(cur)
             parada=[]       
             fecha = datetime.strftime(datetime.now(),"%Y %m %d - %H")
@@ -53,7 +53,7 @@ def verificacion():
             cur.close()
             return render_template('index.html',paradas=paradas,informacion=informacion,cabecera=cabecera,fecha=fecha,miembros=miembros,diario=diario,cuotas_hist=cuotas_hist)                  
         
-      elif codigo_personal == 'GRN00':
+      elif codigo_personal == 'grn00':
             cur = connection.cursor() 
             paradas=funciones.listado_paradas_norte(cur)
             parada=[]  
@@ -66,7 +66,7 @@ def verificacion():
             cur.close()
             return render_template('index_norte.html',paradas=paradas,informacion=informacion,cabecera=cabecera,fecha=fecha,miembros=miembros,diario=diario,cuotas_hist=cuotas_hist)      
 
-      elif codigo_personal == 'GRS00':
+      elif codigo_personal == 'grs00':
             cur = connection.cursor() 
             paradas=funciones.listado_paradas_sur(cur)
             parada=[]  
@@ -79,7 +79,7 @@ def verificacion():
             cur.close()
             return render_template('index_sur.html',paradas=paradas,informacion=informacion,cabecera=cabecera,fecha=fecha,miembros=miembros,diario=diario,cuotas_hist=cuotas_hist)      
 
-      elif codigo_personal == 'GRE00':
+      elif codigo_personal == 'gre00':
             cur = connection.cursor() 
             paradas=funciones.listado_paradas_este(cur)
             parada=[]  
@@ -92,7 +92,7 @@ def verificacion():
             cur.close()
             return render_template('index_este.html',paradas=paradas,informacion=informacion,cabecera=cabecera,fecha=fecha,miembros=miembros,diario=diario,cuotas_hist=cuotas_hist)      
  
-      elif codigo_personal == 'GDN00':
+      elif codigo_personal == 'gdn00':
             cur = connection.cursor() 
             paradas=funciones.listado_paradas_distrito(cur)
             parada=[]  
@@ -105,7 +105,7 @@ def verificacion():
             cur.close()
             return render_template('index_distrito.html',paradas=paradas,informacion=informacion,cabecera=cabecera,fecha=fecha,miembros=miembros,diario=diario,cuotas_hist=cuotas_hist)      
   
-      elif codigo_personal == 'GSN00':
+      elif codigo_personal == 'gsn00':
             cur = connection.cursor() 
             paradas=funciones.listado_paradas_sdn(cur)
             parada=[]  
@@ -118,7 +118,7 @@ def verificacion():
             cur.close()
             return render_template('index_sdn.html',paradas=paradas,informacion=informacion,cabecera=cabecera,fecha=fecha,miembros=miembros,diario=diario,cuotas_hist=cuotas_hist)      
    
-      elif codigo_personal == 'GSE00':
+      elif codigo_personal == 'gse00':
             cur = connection.cursor() 
             paradas=funciones.listado_paradas_sde(cur)
             parada=[]  
@@ -132,9 +132,12 @@ def verificacion():
             return render_template('index_sde.html',paradas=paradas,informacion=informacion,cabecera=cabecera,fecha=fecha,miembros=miembros,diario=diario,cuotas_hist=cuotas_hist)      
     
       elif codigo_personal == '00':
-            return render_template('canal_motoben.html')      
+            return render_template('galeria_motoben.html')  
+        
+      elif codigo_personal == '01':
+            return render_template('guia.html')             
 
-      elif codigo_personal == 'GSO00':
+      elif codigo_personal == 'gso00':
             cur = connection.cursor() 
             paradas=funciones.listado_paradas_sdo(cur)
             parada=[]  
@@ -272,7 +275,13 @@ def indice_distrito():
         cur.close()
         return render_template('index_distrito.html',paradas=paradas,informacion=informacion,cabecera=cabecera,fecha=fecha,miembros=miembros,diario=diario,cuotas_hist=cuotas_hist)     
 
+@app.route("/guia")
+def guia():
+    return render_template('guia.html')
 
+@app.route("/galeria")
+def galeria():
+    return render_template('galeria_motoben.html')
 
 if __name__ == "__main__":
     app.run(debug=True,host='0.0.0.0')

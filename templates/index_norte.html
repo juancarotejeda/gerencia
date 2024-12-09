@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Gerencias norte</title>
+    <title>Gerentes norte</title>
     <link rel="webside icon" type="png" href="/static/favicon/favicon-32x32.png">
     <link href="/static/css/bootstrap.min.css" rel="stylesheet"> 
     <link href="/static/css/bootstrap.min.css.map" rel="stylesheet"> 
@@ -16,7 +16,6 @@
   </head>
   <body>
     <div class="container-fluid p-3  text-white text-center">
-    <div class="container mt-5"> 
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <symbol id="check2" viewBox="0 0 16 16">
         <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
@@ -35,13 +34,7 @@
         <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
       </symbol>
     </svg> 
-    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-    <button type="button"  id="returnbtn" class="btn d-flex align-items-center ">
-      <a href="#" class="navbar-brand d-flex align-items-center">
-        <svg class="bi me-2 opacity-50" width="15px" height="15px"><use href="#home"></use></svg>
-      </a>up
-    </button>
-    </div>
+
     <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
       <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
                 id="bd-theme"
@@ -75,7 +68,6 @@
             </button>
           </li>
         </ul>
-    </div>
   <header data-bs-theme="dark">
     <div class="collapse text-bg-dark" id="navbarHeader">
         <div class="row">
@@ -97,11 +89,10 @@
     </header>
     <div class="container mt-5"> 
     <div class="navbar navbar-dark bg-dark shadow-sm">
-    <a href="#" class="navbar-brand d-flex align-items-center">
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"></svg>
-    </a> 
-    <div class="d-flex" role="search">           
-    <form action="/indice_norte"  method="POST">   
+
+    <div  class="container">  
+    <div class="p-selector">           
+    <form action="/indice_norte"  method="POST" >   
     <label for="funcion">Paradas</label>          
       <select name="parada" id="funcion" >
             <optgroup label="funcion"> 
@@ -111,8 +102,9 @@
             {%endfor%}
             </optgroup>
       </select>  
-    <button class="btn btn-outline-success" type="submit">Seleccionar</button>
-    </form>            
+    <button class="btn btn-outline-success" type="submit" >Seleccionar</button>
+    </form>  
+    </div>          
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -165,8 +157,7 @@
       {%endfor%}
       </fieldset>
   </section>
-</div>
-<div class="container mt-5"> 
+ 
   <section id="listado">
     <fieldset class="tables"> 
       <h1>LISTADO DE MIEMBROS</h1>
@@ -190,8 +181,7 @@
       </table>
       </fieldset>
   </section>
-  </div>
-  <div class="container mt-5"> 
+ 
   <section id="finanzas">
     <fieldset class="tables">
       <h1>INFORME FINANCIERO</h1>
@@ -244,8 +234,7 @@
        </table>
        </fieldset>
        </section>
-       </div>
-       <div class="container mt-5"> 
+
        <section id="historia_aportes">
        <fieldset class="tables">
         <h1>Historial de Aportes y Pendientes</h1>

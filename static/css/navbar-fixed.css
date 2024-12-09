@@ -138,9 +138,10 @@ body {
   margin-bottom: 10px;
 }
 
-.publicidad-m img{
-  width: 100px;
-  height: 100px;
+.p-selector {
+background: #fe9001;
+padding: 5px;
+margin-left: 5px;
 }
 
 
@@ -416,7 +417,6 @@ body {
     margin-bottom: 10px; 
     height: 32px; 
     width: 250px;
-    color: #000000; 
   }        
 
   .buscar select{
