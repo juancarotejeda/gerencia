@@ -25,11 +25,11 @@ connection =mysql.connector.connect(
 def login():   
     cur = connection.cursor() 
     resultado=funciones.listado_administrativo(cur)
-    funcion=[]
+    funcionario=[]
     for funcionarios in resultado:
-       funcion += funcionarios  
+       funcionario += funcionarios  
     cur.close()                   
-    return render_template('login.html',funcion=funcion)
+    return render_template('login.html',funcionario=funcionario)
 
 @app.route("/verificacion", methods=["GUET","POST"])
 def verificacion(): 

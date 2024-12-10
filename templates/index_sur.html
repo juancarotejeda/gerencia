@@ -15,7 +15,7 @@
    <script src="/static/js/mostrar.js"></script>
   </head>
   <body>
-    <div class="container-fluid p-3  text-white text-center">
+    <div class="container-fluid p-5 my-4  text-white text-center">
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <symbol id="check2" viewBox="0 0 16 16">
         <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
@@ -68,7 +68,7 @@
             </button>
           </li>
         </ul>
-  <header data-bs-theme="dark">
+  <header  data-bs-theme="dark">
     <div class="collapse text-bg-dark" id="navbarHeader">
         <div class="row">
           <div class="col-sm-8 col-md-7 py-4">
@@ -87,11 +87,13 @@
       </div>
     </div>
     </header>
-    <div class="container mt-5"> 
-    <div class="navbar navbar-dark bg-dark shadow-sm">
-
-    <div  class="container">  
-    <div class="p-selector">           
+    <div class="navbar navbar-dark bg-dark shadow-sm">           
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    </div>
+   
+    <div  class="container p-2 my-2  bg-dark p-selector">             
     <form action="/indice_sur"  method="POST" >   
     <label for="funcion">Paradas</label>          
       <select name="parada" id="funcion" >
@@ -104,21 +106,13 @@
       </select>  
     <button class="btn btn-outline-success" type="submit" >Seleccionar</button>
     </form>  
-    </div>          
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    </div>
-    </div>
-    </div>
-    <div class="container mt-5"> 
-  <section id="informacion">
-    <fieldset class="encabezado">  
+    </div>  
+    <fieldset class=" container p-5 bg-info  encabezado">  
       {%for datos in informacion %}   
       <h1>INFORME DE LA PARADA</h1>  
       <ol>    
       <li>
-      <label for="parada">_Nombre:</label>
+      <label for="parada">Nombre:</label>
       <input type="text" value="{{datos[1]}}" id="parada" readonly>
       </li>
       <li>
@@ -134,34 +128,46 @@
       <input type="text" value="{{datos[4]}}" id="provincia" readonly>
       </li>
       <li>
-      <label for="zona">___Zona :</label>
+      <label for="zona">Zona :</label>
       <input type="text" value="{{datos[5]}}" id="zona" readonly>
       </li>
       <li>
-      <label for="aporte">__Aporte :</label>
+      <label for="aporte">Aporte :</label>
       <input type="text" value="{{datos[6]}}RD$/{{datos[7]}}" id="aporte" readonly>
-      </li>     
+      </li>
       <li>
-      <label for="press">presidente:</label>
+        <label for="miemb">Miembros:</label>
+        <input type="text" value="{{cabecera[0]}}" id="miemb" readonly>
+        </li>     
+      <li>
+      <label for="press">Presidente:</label>
       <input type="text" value="{{cabecera[1]}}" id="press"readonly>
       </li>
       <li>
-      <label for="veedor">Pte. Feder.:</label>
-      <input type="text" value="xxxxxxx" id="veedor" readonly>
+        <label for="status">Status:</label>
+        <input type="text" value="{{datos[10]}}" id="status"readonly>
+        </li>
+      <li>
+      <label for="federado">Pte. Federacion:</label>
+      <input type="text" value="{{datos[11]}}" id="federado" readonly>
       </li>
       <li>
-      <label for="miemb">Miembros:</label>
-      <input type="text" value="{{cabecera[0]}}" id="miemb" readonly>
-      </li>
+        <label for="miemb">ENC.INTRANT:</label>
+        <input type="text" value="{{datos[13]}}" id="miemb" readonly>
+        </li> 
+      <li>
+        <label for="press">Geolocalizacion:</label>
+        <input type="text" value="{{datos[12]}}" id="press"readonly>
+        </li>
       </ol>
       {%endfor%}
       </fieldset>
-  </section>
+
  
-  <section id="listado">
-    <fieldset class="tables"> 
+    <fieldset class=" container p-5 bg-warning table-warning tables"> 
       <h1>LISTADO DE MIEMBROS</h1>
       <table>
+        <thead class="table-success">
          <tr>
             <th>Item</th>
             <th>Nombre del asociado</th>
@@ -169,6 +175,7 @@
             <th>Telefono</th>
             <th>Funcion</th>
          </tr>
+        </thead>
          {% for usuario in miembros %}
          <tr>
             <td>{{usuario[0]}}</td>
@@ -180,15 +187,13 @@
          {%endfor%}
       </table>
       </fieldset>
-  </section>
- 
-  <section id="finanzas">
-    <fieldset class="tables">
+
+      <fieldset class="container p-5 text-bg-danger table-warning tables ">
       <h1>INFORME FINANCIERO</h1>
       <table>
          <tr>
             <th>Item</th>
-            <th>Informe</th>
+            <th>Renglon</th>
             <th>Total al momento</th>
          </tr>
          <tr>
@@ -233,10 +238,8 @@
        </tr>
        </table>
        </fieldset>
-       </section>
-
-       <section id="historia_aportes">
-       <fieldset class="tables">
+  
+        <fieldset class="container p-5  tables ">
         <h1>Historial de Aportes y Pendientes</h1>
         <table>
            <tr>
@@ -257,9 +260,6 @@
            {%endfor%}
         </table>  
      </fieldset>
-    </section> 
   </div>
-</div>
 </body>
 </html>
-  

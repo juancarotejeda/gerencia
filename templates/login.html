@@ -14,7 +14,7 @@
      <script src="/static/js/mostrar.js"></script>
     </head>
     <body>
-    <div class="container-fluid p-5  text-white text-center">
+    <div class="container-fluid text-white text-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
         <symbol id="check2" viewBox="0 0 16 16">
           <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
@@ -85,7 +85,7 @@
         </div>
       </div>
   </header>   
-  <fieldset class="login-entrada">
+  <fieldset class="container p-5  bg-black login-entrada">
   <form  action="/verificacion" method='POST'>    
   <h1>GRUPO ACTEC MOTOBEN</h1>
   <h2>Coordinadores</h2>
@@ -95,7 +95,7 @@
   <select name="funcion" id="mt-funcion">
         <optgroup label="funcion"> 
         <option selected ></option>   
-        {%for miembros in funcion%}
+        {%for miembros in funcionario%}
         <option >{{miembros}}</option>
         {%endfor%}
         </optgroup>
@@ -120,9 +120,9 @@
   </ol>
   </form>
   </fieldset> 
-<footer >
-      <p class="mb-1">Grupo Actec &copy;Para todas las paradas de motores del pais</p>
-      <p class="mb-0">Eres Nuevo? <a href="/">Visite el canal de MotoBen</a> O buzque nuestra guia <a href="{{url_for('guia')}}">getting started guide</a>.</p>
+<footer class="container p-3 my-2 bg-body-secondary text-info">
+    <p class="mb-1">Grupo Actec &copy;Para todas las paradas de motores del pais</p>
+    <p class="mb-0">Eres Nuevo? <a href="/">Visite el canal de MotoBen</a> O buzque nuestra guia <a href="{{url_for('guia')}}">getting started guide</a>.</p>
 </footer>
 </div>
 </body>

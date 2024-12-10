@@ -99,7 +99,7 @@ def listado_administrativo(cur):
 
 def info_parada(cur,parada):
     if parada !=[]:
-      cur.execute(f"SELECT codigo,nombre,direccion,municipio,provincia,zona,cuota,pago,banco,num_cuenta FROM  tabla_index  WHERE nombre='{parada}'" )
+      cur.execute(f"SELECT codigo,nombre,direccion,municipio,provincia,zona,cuota,pago,banco,num_cuenta, autorizar, federacion, geolocalizacion,coordinacion FROM  tabla_index  WHERE nombre='{parada}'" )
       infos=cur.fetchall()     
       return infos
     else:
